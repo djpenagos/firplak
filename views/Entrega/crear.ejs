@@ -1,6 +1,6 @@
 <%- include ../layouts/cabecera.ejs %>
 <br>
-<div class="card">
+<div class="card" style="border: 1px solid #000">
     <div class="card-header" style="background-color: #0d6efd; color: #fff; font-size: 30px;">
         NUEVA POD
     </div>
@@ -23,9 +23,11 @@
                     <label for="my-input">Imagen</label>
                     <input id="my-input" class="form-control-file" type="file" name="archivo" required>
                 </div>
-            
-                <button class="btn btn-primary" type="submit">Guardar</button>
-                <a class="btn btn-secondary" href="/entregas">Cancelar</a>
+                
+                <br>
+                <br>
+                <button class="btn btn-primary" type="submit" style="border: 1px solid #000">Guardar</button>
+                <a class="btn btn-secondary" href="/entregas" style="border: 1px solid #000">Cancelar</a>
             </form>
         </p>
     </div>

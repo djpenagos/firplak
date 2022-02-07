@@ -3,7 +3,7 @@ var router = express.Router();
 const entregaControllers = require('../controllers/entregaControllers');
 
 var multer = require('multer');
-var fecha = Math.random();
+var fecha = Date.now();
 
 var rutaAlmacen = multer.diskStorage(
     {
@@ -11,6 +11,7 @@ var rutaAlmacen = multer.diskStorage(
             callback(null,'./public/images/');
         },
         filename:function (request,file,callback){
+            console.log(file);
             callback(null,fecha+"_"+file.originalname);
         }
     }
