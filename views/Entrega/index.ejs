@@ -1,6 +1,11 @@
 <%- include ../layouts/cabecera.ejs %> 
         <br>
-        <a href="/entregas/crear" class="btn btn-primary" type="button" style="border: 1px solid #000; width: 100px;">Crear</a>
+        <button type="button" class="btn btn-primary">            
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"></path>
+            </svg>
+            <a href="/entregas/crear" style="color: #fff; text-decoration: none;">CREAR</a>
+          </button>
         <br>
         <br>
         <table id = "main" class="table table-light" style="border: 2px solid #000">
@@ -22,27 +27,31 @@
                         <td style="border: 1px solid #000">
                             <img class="img-thumbnail" src="images/<%=entregas[entrega].foto%>" width="100">                            
                         </td>
-                        <td style="padding: 50px 0;"> 
-                            
-                            <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
-                                
+                        <td style="padding: 50px 0; border: 1px solid #000">                             
+                            <div class="btn-group-vertical" role="group" aria-label="Vertical button group">                                
                                 <form class="form-inline" method="get" action="/entregas/editar/<%=entregas[entrega].id %>">
-                                    <button class="btn btn-warning" type="submit" style="border: 1px solid #000">Editar</button>
+                                    <button type="submit" class="btn btn-warning">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                            <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"></path>
+                                            <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"></path>
+                                        </svg>
+                                        Editar
+                                      </button>
                                 </form>
-
-                            </div>
+                            </div>                           
                             
                             | 
                             
-                            <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
-                                
+                            <div class="btn-group-vertical" role="group" aria-label="Vertical button group">                                
                                 <form class="form-inline" method="post" action="/entregas/eliminar/<%=entregas[entrega].id %>">
-                                    <button onclick="return confirm('¿Estas seguro de eliminar?')" class="btn btn-danger" type="submit" style="border: 1px solid #000">Borrar</button>
+                                    <button type="submit" class="btn btn-danger" onclick="return confirm('¿Estas seguro de eliminar?')">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M6 1.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5v1H6v-1Zm5 0v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5ZM4.5 5.029a.5.5 0 1 1 .998-.06l.5 8.5a.5.5 0 0 1-.998.06l-.5-8.5Zm6.53-.528a.5.5 0 0 1 .47.528l-.5 8.5a.5.5 0 1 1-.998-.058l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z"></path>
+                                        </svg>
+                                        Borrar
+                                      </button>                                    
                                 </form>
-
                             </div>
-                        
-                        
                         </td>
                     </tr>
                 <% } %>
