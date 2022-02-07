@@ -1,6 +1,6 @@
 <%- include ../layouts/cabecera.ejs %> 
 <br>
-<div class="card">
+<div class="card" style="border: 1px solid #000">
     <div class="card-header" style="background-color: #0d6efd; color: #fff; font-size: 30px;">
         EDITAR POD
     </div>
@@ -24,11 +24,12 @@
                 <div class="form-group" style="margin: 10px">
                     <label for="my-input">Imagen</label>
                     <img class="img-thumbnail" src="../../images/<%=entrega.foto%>" width="100" alt="">
-                    <input id="my-input" class="form-control-file" type="file" name="archivo">
+                    <input id="my-input" class="form-control-file" type="file" name="archivo" style="width: 100%;">
                 </div>
-            
-                <button class="btn btn-primary" type="submit">Actualizar</button>
-                <a class="btn btn-secondary" href="/entregas">Cancelar</a>
+                <br>
+                
+                <button style="border: 1px solid #000" class="btn btn-primary" type="submit">Actualizar</button>
+                <a style="border: 1px solid #000" class="btn btn-secondary" href="/entregas">Cancelar</a>
             </form>
         </p>
     </div>

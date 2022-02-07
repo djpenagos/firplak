@@ -37,7 +37,7 @@
                             <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
                                 
                                 <form class="form-inline" method="post" action="/entregas/eliminar/<%=entregas[entrega].id %>">
-                                    <button class="btn btn-danger" type="submit" style="border: 1px solid #000">Borrar</button>
+                                    <button onclick="return confirm('¿Estas seguro de eliminar?')" class="btn btn-danger" type="submit" style="border: 1px solid #000">Borrar</button>
                                 </form>
 
                             </div>
