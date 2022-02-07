@@ -1,0 +1,52 @@
+<%- include ../layouts/cabecera.ejs %> 
+        <br>
+        <a href="/entregas/crear" class="btn btn-primary" type="button" style="border: 1px solid #000; width: 100px;">Crear</a>
+        <br>
+        <br>
+        <table class="table table-light" style="border: 2px solid #000">
+            <thead class="thead-light" style="text-align: center; font-size: 20px;">
+                <tr>
+                    <th>ID</th>
+                    <th>Titulo</th>
+                    <th>Descripcion</th>                    
+                    <th>Imagen</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for( let entrega = 0; entrega < entregas.length; entrega++ ) { %>
+                    <tr style="text-align: center;">
+                        <td> <%=entregas[entrega].id %></td>
+                        <td> <%=entregas[entrega].titulo  %></td>
+                        <td><%=entregas[entrega].descripcion%></td>
+                        <td>
+                            <img class="img-thumbnail" src="images/<%=entregas[entrega].foto%>" width="100">                            
+                        </td>
+                        <td> 
+                            
+                            <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+                                
+                                <form class="form-inline" method="get" action="/entregas/editar/<%=entregas[entrega].id %>">
+                                    <button class="btn btn-warning" type="submit">Editar</button>
+                                </form>
+
+                            </div>
+                            
+                            | 
+                            
+                            <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+                                
+                                <form class="form-inline" method="post" action="/entregas/eliminar/<%=entregas[entrega].id %>">
+                                    <button class="btn btn-danger" type="submit">Borrar</button>
+                                </form>
+
+                            </div>
+                        
+                        
+                        </td>
+                    </tr>
+                <% } %>
+                
+            </tbody>
+        </table>
+<%- include ../layouts/pie.ejs %> 

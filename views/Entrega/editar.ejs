@@ -1,0 +1,37 @@
+<%- include ../layouts/cabecera.ejs %> 
+<br>
+<div class="card">
+    <div class="card-header" style="background-color: #0d6efd; color: #fff; font-size: 30px;">
+        EDITAR POD
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">Editar Datos</h5>
+        <p class="card-text">
+            <form method="post" action="../actualizar/" enctype="multipart/form-data">
+    
+                <input type="hidden" name="id" value="<%=entrega.id%> ">
+            
+                <div class="form-group" style="margin: 10px">
+                    <label for="my-input">Titulo</label>
+                    <input id="my-input" value="<%=entrega.titulo%>" class="form-control" type="text" name="titulo" readonly>
+                </div>
+            
+                <div class="form-group" style="margin: 10px">
+                    <label for="my-input">Descripcion</label>
+                    <input id="my-input" value="<%=entrega.descripcion%>" class="form-control" type="text" name="titulo" readonly>
+                </div>
+            
+                <div class="form-group" style="margin: 10px">
+                    <label for="my-input">Imagen</label>
+                    <img class="img-thumbnail" src="../../images/<%=entrega.foto%>" width="100" alt="">
+                    <input id="my-input" class="form-control-file" type="file" name="archivo">
+                </div>
+            
+                <button class="btn btn-primary" type="submit">Actualizar</button>
+                <a class="btn btn-secondary" href="/entregas">Cancelar</a>
+            </form>
+        </p>
+    </div>
+</div>
+
+<%- include ../layouts/pie.ejs %> 
